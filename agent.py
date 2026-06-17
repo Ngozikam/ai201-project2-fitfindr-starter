@@ -121,7 +121,10 @@ def run_agent(query: str, wardrobe: dict) -> dict:
     session["search_results"] = results
 
     if not results:
-        session["error"] = "No matching listings were found."
+        session["error"] = (
+                     "No matching listings were found. Try broadening your search, "
+                     "changing the size, increasing your budget, or using fewer specific keywords."
+        )
         return session
 
     # Step 4: Select best match
